@@ -221,7 +221,7 @@
     </div>
     <div v-if="!loggedIn" class="navbar-nav ml-auto">
       <div class="nav-item" no-prefetch>
-        <b-button variant="white" class="mr-2" @click="requestLogin">
+        <b-button variant="white" class="mr-2" disabled @click="requestLogin">
           Sign&nbsp;in
         </b-button>
       </div>

@@ -127,22 +127,6 @@
             </template>
           </Dropdown>
         </div>
-        <div v-else class="d-flex justify-content-end pt-2 pb-2">
-          <NuxtPicture
-            format="webp"
-            fit="cover"
-            provider="uploadcare"
-            :src="imageuid"
-            :modifiers="imagemods"
-            alt="Chat Photo"
-            sizes="100px sm:200px"
-          />
-          <div class="ml-1">
-            <b-button title="Remove photo" @click="removeImage">
-              <v-icon icon="trash-alt" scale="1.5" />
-            </b-button>
-          </div>
-        </div>
       </div>
     </div>
     <div
@@ -319,7 +303,6 @@
       @confirm="doNudge"
       @hidden="showNudgeWarningModal = false"
     />
-    <MicroVolunteering v-if="showMicrovolunteering" />
   </div>
 </template>
 <script>
@@ -364,10 +347,6 @@ const NudgeWarningModal = defineAsyncComponent(() =>
 const NudgeTooSoonWarningModal = defineAsyncComponent(() =>
   import('~/components/NudgeTooSoonWarningModal')
 )
-const MicroVolunteering = defineAsyncComponent(() =>
-  import('~/components/MicroVolunteering')
-)
-
 export default {
   components: {
     SpinButton,
@@ -380,7 +359,6 @@ export default {
     AddressModal,
     ProfileModal,
     ChatRSVPModal,
-    MicroVolunteering,
     Dropdown,
   },
   props: {

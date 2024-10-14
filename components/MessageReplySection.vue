@@ -78,7 +78,7 @@
         <em>Settings</em>.
       </p>
       <div v-if="!me">
-        <NewFreegler class="mt-2" />
+        <NewUser class="mt-2" />
       </div>
     </div>
     <hr />
@@ -148,15 +148,13 @@ import NewUserInfo from '~/components/NewUserInfo'
 import ChatButton from '~/components/ChatButton'
 import SpinButton from '~/components/SpinButton.vue'
 
-const NewFreegler = defineAsyncComponent(() =>
-  import('~/components/NewFreegler')
-)
+const NewUser = defineAsyncComponent(() => import('~/components/NewUser'))
 
 export default {
   components: {
     ChatButton,
     EmailValidator,
-    NewFreegler,
+    NewUser,
     NewUserInfo,
     SpinButton,
     VeeForm,

@@ -1,18 +1,5 @@
 <template>
   <span class="ProfileImage__container">
-    <NuxtPicture
-      v-if="externaluid"
-      format="webp"
-      fit="cover"
-      provider="uploadcare"
-      :src="externaluid"
-      :modifiers="externalmods"
-      :class="className"
-      class="circle"
-      :alt="altText"
-      :width="width"
-      :height="width"
-    />
     <v-icon
       v-if="isModerator"
       icon="leaf"

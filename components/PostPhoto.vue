@@ -23,20 +23,8 @@
       </div>
     </span>
     <div class="image-wrapper">
-      <NuxtPicture
-        v-if="externaluid"
-        fit="cover"
-        format="webp"
-        provider="uploadcare"
-        :src="externaluid"
-        :modifiers="mods"
-        alt="Item Photo"
-        :width="200"
-        :height="200"
-        @click="$emit('click')"
-      />
       <b-img
-        v-else-if="thumbnail"
+        v-if="thumbnail"
         lazy
         :src="paththumb"
         rounded

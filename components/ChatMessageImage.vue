@@ -14,20 +14,8 @@
       size="sm"
       class="mr-1 mb-1 mt-1 inline"
     />
-    <NuxtPicture
-      v-if="chatmessage.image?.externaluid"
-      format="webp"
-      fit="cover"
-      provider="uploadcare"
-      :src="chatmessage.image.externaluid"
-      :modifiers="chatmessage.image.externalmods"
-      alt="Chat Photo"
-      :width="200"
-      :height="200"
-      @click="zoom = true"
-    />
     <b-img
-      v-else-if="chatmessage.image"
+      v-if="chatmessage.image"
       lazy
       fluid
       class="chatimage clickme img-thumbnail rounded"
@@ -52,17 +40,8 @@
       ok-only
     >
       <template #default>
-        <NuxtPicture
-          v-if="chatmessage.image?.externaluid"
-          format="webp"
-          fit="cover"
-          provider="uploadcare"
-          :src="chatmessage.image.externaluid"
-          :modifiers="chatmessage.image.externalmods"
-          alt="Chat Photo"
-        />
         <b-img
-          v-else-if="chatmessage.image"
+          v-if="chatmessage.image"
           lazy
           fluid
           generator-unable-to-provide-required-alt=""

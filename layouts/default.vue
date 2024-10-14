@@ -39,10 +39,11 @@ if (jwt || persistent) {
   // We have some credentials, which may or may not be valid on the server.  If they are, then we can crack on and
   // start rendering the page.  This will be quicker than waiting for GoogleOneTap to load on the client and tell us
   // whether or not we can log in that way.
-  let user = null
+  const user = null
 
   try {
-    user = await authStore.fetchUser()
+    // TODO
+    // user = await authStore.fetchUser()
   } catch (e) {
     console.log('Error fetching user', e)
   }
@@ -90,11 +91,12 @@ watch(
   }
 )
 
-onMounted(async () => {
+onMounted(() => {
   // For this layout we don't need to be logged in.  So can just continue.  But we want to know first whether or
   // not we are logged in.  We might already know that from the server via cookies, but if not, find out.
   if (!loginStateKnown.value) {
-    await authStore.fetchUser()
+    // TODO
+    // await authStore.fetchUser()
   }
 })
 

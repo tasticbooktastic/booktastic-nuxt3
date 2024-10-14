@@ -41,22 +41,7 @@
           attachment: true,
         }"
       >
-        <div ref="imagewrapper">
-          <NuxtPicture
-            v-if="attachments[0].externaluid"
-            format="webp"
-            fit="cover"
-            provider="uploadcare"
-            :src="attachments[0].externaluid"
-            :modifiers="attachments[0].externalmods"
-            alt="Item Photo"
-            :width="Math.round(width)"
-            :height="200"
-            preload
-            @error="brokenImage"
-            @click="$emit('zoom')"
-          />
-        </div>
+        <div ref="imagewrapper"></div>
       </div>
     </button>
   </div>
@@ -101,11 +86,6 @@ if (width > 3000) {
 }
 if (height > 3000) {
   height.value = 3000
-}
-
-function brokenImage() {
-  // If the attachment image is broken, we're best off just hiding it.
-  defaultAttachments.value = true
 }
 </script>
 <style scoped lang="scss">

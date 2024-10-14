@@ -46,7 +46,7 @@
           <b-nav>
             <b-nav-item>
               <nuxt-link v-if="!loggedIn" no-prefetch>
-                <div class="btn btn-white mr-2" @click="requestLogin">
+                <div class="btn btn-white mr-2 disabled" @click="requestLogin">
                   Log in or Join
                 </div>
               </nuxt-link>

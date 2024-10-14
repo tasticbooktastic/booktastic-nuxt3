@@ -4,17 +4,16 @@ const ADS_SQUARISH_SIZES = [[300, 250]]
 
 const CONFIG = {
   // Legacy API, especially mod ops.
-  APIv1: process.env.IZNIK_API_V1 || 'https://fdapilive.ilovefreegle.org/api',
-
-  // New style API, for fast read ops.
-  APIv2: process.env.IZNIK_API_V2 || 'https://api.ilovefreegle.org/apiv2',
+  APIv1: 'https://api.booktastic.org/api',
+  APIv2: 'https://api.booktastic.org/api',
+  API_BOOKTASTIC: 'https://api.booktastic.org/api',
 
   // This is where the user site is.
-  USER_SITE: 'https://www.ilovefreegle.org',
+  USER_SITE: 'https://www.booktastic.org',
 
-  // This is where images are served from.
-  IMAGE_SITE: 'https://images.ilovefreegle.org',
-  UPLOADCARE_PROXY: 'https://61ddd294bd3a390019c6.ucr.io/',
+  // Our own uploader, and delivery of those images via a cached use of wsrl.nl.
+  TUS_UPLOADER: 'https://uploads.booktastic.org',
+  IMAGE_DELIVERY: 'https://delivery.booktastic.org',
 
   // OpenStreetMap Tile Server
   OSM_TILE:
@@ -42,6 +41,9 @@ const CONFIG = {
   COOKIEYES: process.env.COOKIEYES || null,
 
   TRUSTPILOT_LINK: process.env.TRUSTPILOT_LINK || null,
+
+  GOOGLE_ADSENSE_ID: process.env.GOOGLE_ADSENSE_ID,
+  GOOGLE_ADSENSE_TEST_MODE: process.env.GOOGLE_ADSENSE_TEST_MODE,
 
   AD_PREBID_CONFIG: [
     {

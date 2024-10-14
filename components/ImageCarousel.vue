@@ -34,17 +34,7 @@
             "
           >
             <template #canvas>
-              <NuxtPicture
-                v-if="attachment.externaluid"
-                format="webp"
-                provider="uploadcare"
-                :src="attachment.externaluid"
-                :modifiers="attachment.externalmods"
-                alt="Item picture"
-                :width="Math.round(width * 0.95)"
-              />
               <b-img
-                v-else
                 generator-unable-to-provide-required-alt=""
                 title="Item picture"
                 :src="attachment.path"
