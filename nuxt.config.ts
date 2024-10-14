@@ -46,8 +46,8 @@ export default defineNuxtConfig({
   //
   // Sometimes when debugging it's useful to set ssr: false, because the errors are clearer when generated on the client.
   // @ts-ignore
-  target: 'server',
-  ssr: true,
+  target: 'client',
+  ssr: false,
   spaLoadingTemplate: false,
 
   // This makes Netlify serve assets from the perm link for the build, which avoids missing chunk problems when
@@ -266,7 +266,7 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en',
       },
-      title: "Freegle - Don't throw it away, give it away!",
+      title: 'Booktastic - lend and borrow books with people nearby!',
       script: [
         {
           // This is a polyfill for Safari12.  Can't get it to work using modernPolyfills - needs to happen very
@@ -558,7 +558,7 @@ export default defineNuxtConfig({
         {
           hid: 'og:title',
           property: 'og:title',
-          content: "Freegle - Don't throw it away, give it away!",
+          content: 'Booktastic - lend and borrow books with people nearby!',
         },
         { hid: 'og:site_name', property: 'og:site_name', content: 'Freegle' },
         {
@@ -586,7 +586,7 @@ export default defineNuxtConfig({
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: "Freegle - Don't throw it away, give it away!",
+          content: 'Booktastic - lend and borrow books with people nearby!',
         },
         {
           hid: 'twitter:description',
@@ -624,13 +624,6 @@ export default defineNuxtConfig({
     },
   },
   image: {
-    uploadcare: {
-      provider: 'uploadcare',
-
-      // On some machines we can't resolve ucarecdn.com but can resolve www.ucarecdn.com.
-      cdnURL: 'https://www.ucarecdn.com',
-    },
-
     // We want sharp images on fancy screens.
     densities: [1, 2],
 
@@ -646,12 +639,6 @@ export default defineNuxtConfig({
       xl: 1200,
       xxl: 1400,
       '2xl': 1400,
-    },
-
-    providers: {
-      uploadcareProxy: {
-        provider: '~/providers/uploadcare-proxy.ts',
-      },
     },
   },
 })

@@ -13,14 +13,6 @@
       :width="width"
       :height="width"
     />
-    <ProxyImage
-      v-else
-      :src="validImage"
-      sizes="100px"
-      :class-name="className"
-      :alt="altText"
-      @error="brokenProfileImage"
-    />
     <v-icon
       v-if="isModerator"
       icon="leaf"

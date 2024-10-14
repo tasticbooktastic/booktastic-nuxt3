@@ -56,20 +56,6 @@
             @error="brokenImage"
             @click="$emit('zoom')"
           />
-          <ProxyImage
-            v-else
-            class-name="p-0 rounded"
-            alt="Item picture"
-            title="Item picture"
-            :src="attachments[0].path"
-            :sizes="thumbnail ? '320px sm:200px md:200px' : '320px sm:992px'"
-            :width="Math.round(width)"
-            :height="200"
-            fit="cover"
-            preload
-            @error="brokenImage"
-            @click="$emit('zoom')"
-          />
         </div>
       </div>
     </button>
