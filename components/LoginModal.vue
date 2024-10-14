@@ -374,10 +374,7 @@ export default {
     },
     signUp: {
       immediate: true,
-      handler(newVal) {
-        if (newVal) {
-        }
-      },
+      handler(newVal) {},
     },
   },
   beforeUnmount() {
@@ -423,9 +420,6 @@ export default {
     },
     loginNative(e) {
       this.loginType = 'Freegle'
-
-      if (this.signUp) {
-      }
 
       const self = this
       this.nativeLoginError = null
@@ -541,9 +535,6 @@ export default {
     async loginFacebook() {
       this.loginType = 'Facebook'
 
-      if (this.signUp) {
-      }
-
       this.nativeLoginError = null
       this.socialLoginError = null
       try {
@@ -585,9 +576,6 @@ export default {
       if (response?.credential) {
         console.log('Signed in')
 
-        if (this.signUp) {
-        }
-
         try {
           await this.authStore.login({
             googlejwt: response.credential,
@@ -604,11 +592,8 @@ export default {
         this.socialLoginError = 'Google login failed: ' + response.error
       }
     },
-    async loginYahoo() {
+    loginYahoo() {
       this.loginType = 'Yahoo'
-
-      if (this.signUp) {
-      }
 
       // Sadly Yahoo doesn't support a Javascript-only OAuth flow, so far as I can tell.  So what we do is
       // redirect to Yahoo, which returns back to us with a code parameter, which we then pass to the server
