@@ -8,14 +8,6 @@
       :div-id="adDivId"
       class="mt-2"
     />
-    <CommunityEventSidebar
-      v-if="showCommunityEvents"
-      class="overflow-y-scroll border-bottom"
-    />
-    <VolunteerOpportunitySidebar
-      v-if="showVolunteerOpportunities"
-      class="overflow-y-scroll border-top border-bottom"
-    />
   </div>
   <div class="sidebar__botleft align-content-end">
     <BotLeftBox v-if="showBotLeft" class="social-media__wrapper ml-2" />
@@ -23,18 +15,9 @@
 </template>
 <script>
 import BotLeftBox from './BotLeftBox'
-const CommunityEventSidebar = defineAsyncComponent(() =>
-  import('~/components/CommunityEventSidebar')
-)
-const VolunteerOpportunitySidebar = defineAsyncComponent(() =>
-  import('~/components/VolunteerOpportunitySidebar')
-)
-
 export default {
   components: {
     BotLeftBox,
-    CommunityEventSidebar,
-    VolunteerOpportunitySidebar,
   },
   props: {
     showCommunityEvents: {
