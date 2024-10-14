@@ -13,8 +13,7 @@ const CONFIG = {
 
   // Our own uploader, and delivery of those images via a cached use of wsrl.nl.
   TUS_UPLOADER: 'https://uploads.booktastic.org',
-  // TODO IMAGE_DELIVERY: 'https://delivery.booktastic.org',
-  IMAGE_DELIVERY: 'https://wsrv.nl',
+  IMAGE_DELIVERY: 'https://delivery.booktastic.org',
 
   // OpenStreetMap Tile Server
   OSM_TILE:
