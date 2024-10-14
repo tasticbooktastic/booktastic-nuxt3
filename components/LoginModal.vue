@@ -376,26 +376,6 @@ export default {
       immediate: true,
       handler(newVal) {
         if (newVal) {
-          this.$api.bandit.shown({
-            uid: 'signUpModal',
-            variant: 'facebook',
-          })
-          this.$api.bandit.shown({
-            uid: 'signUpModal',
-            variant: 'google',
-          })
-          this.$api.bandit.shown({
-            uid: 'signUpModal',
-            variant: 'yahoo',
-          })
-          this.$api.bandit.shown({
-            uid: 'signUpModal',
-            variant: 'native',
-          })
-          this.$api.bandit.shown({
-            uid: 'signUpModal',
-            variant: 'signin',
-          })
         }
       },
     },
@@ -445,10 +425,6 @@ export default {
       this.loginType = 'Freegle'
 
       if (this.signUp) {
-        this.$api.bandit.chosen({
-          uid: 'signUpModal',
-          variant: 'native',
-        })
       }
 
       const self = this
@@ -566,10 +542,6 @@ export default {
       this.loginType = 'Facebook'
 
       if (this.signUp) {
-        await this.$api.bandit.chosen({
-          uid: 'signUpModal',
-          variant: 'facebook',
-        })
       }
 
       this.nativeLoginError = null
@@ -614,10 +586,6 @@ export default {
         console.log('Signed in')
 
         if (this.signUp) {
-          await this.$api.bandit.chosen({
-            uid: 'signUpModal',
-            variant: 'google',
-          })
         }
 
         try {
@@ -640,10 +608,6 @@ export default {
       this.loginType = 'Yahoo'
 
       if (this.signUp) {
-        await this.$api.bandit.chosen({
-          uid: 'signUpModal',
-          variant: 'yahoo',
-        })
       }
 
       // Sadly Yahoo doesn't support a Javascript-only OAuth flow, so far as I can tell.  So what we do is
@@ -679,11 +643,6 @@ export default {
       this.forceSignIn = true
       e.preventDefault()
       e.stopPropagation()
-
-      this.$api.bandit.chosen({
-        uid: 'signUpModal',
-        variant: 'signin',
-      })
     },
     togglePassword() {
       this.showPassword = !this.showPassword

@@ -2,7 +2,7 @@
   <div>
     <OurUploader v-model="currentAtts" class="bg-white" />
     <div v-for="att in currentAtts" :key="att.id">
-      <NuxtImg width="200" :src="delivery + '/' + att.ouruid" />
+      <NuxtImg width="200" :src="att.ouruid" provider="wesrv" />
     </div>
   </div>
 </template>
