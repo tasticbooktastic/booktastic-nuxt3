@@ -4,7 +4,7 @@
     <div v-for="att in currentAtts" :key="att.id">
       <div class="d-flex flex-column text-center">
         <NuxtImg width="200" :src="att.ouruid" provider="weserv" />
-        Image: {{ att.ouruid }}
+        <div class="small">Image UD: {{ att.ouruid }}</div>
       </div>
     </div>
   </div>
