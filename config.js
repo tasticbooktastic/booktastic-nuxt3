@@ -3,10 +3,8 @@ const ADS_MEDIUM_BANNER_SIZES = [[728, 90]]
 const ADS_SQUARISH_SIZES = [[300, 250]]
 
 const CONFIG = {
-  // Legacy API, especially mod ops.
-  APIv1: 'https://api.booktastic.org/api',
-  APIv2: 'https://api.booktastic.org/api',
-  API_BOOKTASTIC: 'https://api.booktastic.org/api',
+  APIv1: process.env.API_V1 || 'https://api.booktastic.org/api',
+  APIv2: process.env.API_V1 || 'https://api.booktastic.org/api',
 
   // This is where the user site is.
   USER_SITE: 'https://www.booktastic.org',
@@ -24,6 +22,7 @@ const CONFIG = {
   GEOCODE: process.env.GEOCODE || 'https://geocode.ilovefreegle.org/api',
 
   // Google keys from scenic-oxygen-849 project accessed from Freegle Geeks.
+  // TODO
   GOOGLE_MAPS_KEY: 'AIzaSyCdTSJKGWJUOx2pq1Y0f5in5g4kKAO5dgg',
   GOOGLE_API_KEY: 'AIzaSyArVxoX781qdcbmQZi1PKHX-qa0bPbboH4',
   GOOGLE_CLIENT_ID:

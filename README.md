@@ -21,12 +21,12 @@ Then install all the dependencies:
 npm install --legacy-peer-deps
 ```
 
-Set some environment variables:
-```
-BOOKTASTIC_API=https://booktastic.org/api
-```
+If running the Go API Server locally then set:
 
-(if running the Go API Server locally then http://localhost:8192/api)
+```
+API_V1=http://localhost:8192/api
+API_V2=http://localhost:8192/api
+```
 
 Then start the dev server:
 ```

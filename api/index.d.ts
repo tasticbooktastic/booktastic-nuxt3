@@ -41,6 +41,7 @@ import NewsAPI from './NewsAPI.js'
 import NoticeboardAPI from './NoticeboardAPI.js'
 import NotificationAPI from './NotificationAPI.js'
 import SessionAPI from './SessionAPI.js'
+import ShelfAPI from './ShelfAPI.js'
 import ShortlinksAPI from './ShortlinksAPI.js'
 import SocialActionsAPI from './SocialActionsAPI.js'
 import SpammersAPI from './SpammersAPI.js'
@@ -85,6 +86,7 @@ interface API {
   noticeboard: NoticeboardAPI;
   notification: NotificationAPI;
   session: SessionAPI;
+  shelf: ShelfAPI;
   shortlinks: ShortlinksAPI;
   socialactions: SocialActionsAPI;
   spammers: SpammersAPI;

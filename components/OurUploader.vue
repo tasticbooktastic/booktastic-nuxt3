@@ -351,7 +351,7 @@ async function uploadSuccess(result) {
           // path: ret.url,
           // paththumb: ret.url,
           // ouruid: ret.uid,
-          ouruid: uid,
+          externaluid: uid,
           externalmods: mods,
         })
         // }

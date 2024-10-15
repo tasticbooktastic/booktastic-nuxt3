@@ -11,7 +11,6 @@
         <client-only>
           <BreakpointFettler />
         </client-only>
-        <p>Upload a photo of a bookshelf to test:</p>
         <div class="w-100 d-flex justify-content-around">
           <ShelfUpload />
         </div>

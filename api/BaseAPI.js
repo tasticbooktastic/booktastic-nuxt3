@@ -450,4 +450,16 @@ export default class BaseAPI {
   $getv2(path, params = {}, logError = true) {
     return this.$requestv2('GET', path, { params }, logError)
   }
+
+  $putv2(path, params = {}, logError = true) {
+    return this.$requestv2('PUT', path, { params }, logError)
+  }
+
+  $patch2(path, params = {}, logError = true) {
+    return this.$requestv2('PATCH', path, { params }, logError)
+  }
+
+  $delv2(path, params = {}, logError = true) {
+    return this.$requestv2('DELETE', path, { params }, logError)
+  }
 }
