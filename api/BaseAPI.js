@@ -455,7 +455,7 @@ export default class BaseAPI {
     return this.$requestv2('PUT', path, { params }, logError)
   }
 
-  $patch2(path, params = {}, logError = true) {
+  $patchv2(path, params = {}, logError = true) {
     return this.$requestv2('PATCH', path, { params }, logError)
   }
 

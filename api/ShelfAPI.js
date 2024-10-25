@@ -18,7 +18,7 @@ export default class ShelfAPI extends BaseAPI {
   }
 
   save(data) {
-    return this.$patchv2('/shelf', data)
+    return this.$patchv2('/shelf/' + data.id, data)
   }
 
   async add(data) {

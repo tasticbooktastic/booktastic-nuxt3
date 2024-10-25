@@ -55,7 +55,8 @@ if (jwt || persistent) {
 
 if (!ready) {
   // We don't have a valid JWT.  See if OneTap can sign us in.
-  oneTap.value = true
+  // TODO
+  // oneTap.value = true
 }
 
 if (proxy) {
