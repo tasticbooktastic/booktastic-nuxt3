@@ -6,6 +6,7 @@ export const useShelfStore = defineStore({
   id: 'shelf',
   state: () => ({
     list: {},
+    booksByShelf: {},
     forUser: [],
     forGroup: [],
   }),
@@ -36,6 +37,11 @@ export const useShelfStore = defineStore({
     async fetchList(id) {
       this.forUser = (await api(this.config).shelf.list(id)) || []
     },
+    async fetchBooks(id) {
+      const books = await api(this.config).shelf.listBooks(id)
+
+      this.booksByShelf[id] = books
+    },
     async fetchGroup(id) {
       this.forGroup = await api(this.config).shelf.listGroup(id)
     },
@@ -62,6 +68,9 @@ export const useShelfStore = defineStore({
   getters: {
     byId: (state) => (id) => {
       return state.list[id]
+    },
+    booksById: (state) => (id) => {
+      return state.booksByShelf[id]
     },
   },
 })

@@ -13,6 +13,10 @@ export default class ShelfAPI extends BaseAPI {
     return this.$getv2('/shelf/group/' + id)
   }
 
+  listBooks(id) {
+    return this.$getv2('/shelf/' + id + '/books')
+  }
+
   save(data) {
     return this.$patchv2('/shelf', data)
   }
