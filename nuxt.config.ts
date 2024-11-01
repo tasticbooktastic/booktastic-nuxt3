@@ -601,14 +601,12 @@ export default defineNuxtConfig({
         {
           hid: 'description',
           name: 'description',
-          content:
-            "Give and get stuff for free in your local community.  Don't just recycle - reuse, freecycle and freegle!",
+          content: 'Proof of concept for a distributed library',
         },
         {
           hid: 'apple-mobile-web-app-title',
           name: 'apple-mobile-web-app-title',
-          content:
-            "Give and get stuff for free in your local community.  Don't just recycle - reuse, freecycle and freegle!",
+          content: 'Proof of concept for a distributed library',
         },
 
         {
@@ -636,8 +634,7 @@ export default defineNuxtConfig({
         {
           hid: 'og:description',
           property: 'og:description',
-          content:
-            "Give and get stuff for free in your local community.  Don't just recycle - reuse, freecycle and freegle!",
+          content: 'Proof of concept for a distributed library',
         },
         {
           hid: 'fb:app_id',
@@ -653,8 +650,7 @@ export default defineNuxtConfig({
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content:
-            "Give and get stuff for free in your local community.  Don't just recycle - reuse, freecycle and freegle!",
+          content: 'Proof of concept for a distributed library',
         },
         {
           hid: 'twitter:image',
