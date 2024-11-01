@@ -6,8 +6,13 @@
           Booktastic - lend and borrow books with people nearby
         </h1>
         <p class="text--medium-responsive black font-weight-bold">
-          This is a proof of concept. We'll explain what it is later.
+          This is a proof of concept.
         </p>
+        <p>
+          Take a photo of a bookshelf and we'll try to identify the books. Make
+          sure it's in focus and well-lit. Something like this:
+        </p>
+        <b-img src="/example.jpg" width="300" class="mb-2" />
         <client-only>
           <BreakpointFettler />
         </client-only>
