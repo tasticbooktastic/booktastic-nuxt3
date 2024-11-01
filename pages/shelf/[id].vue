@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pl-2">
     <h1>Shelf</h1>
     <div v-if="processing">
       <p class="pulsate">Processing image...</p>
@@ -9,7 +9,24 @@
       </p>
     </div>
     <div v-else>
-      <p>Image processed:</p>
+      <p>Image processed. Please rate this:</p>
+      <b-button-group class="mb-2">
+        <b-button
+          :variant="shelf.rating === 'Good' ? 'primary' : 'white'"
+          @click="rate('Good')"
+          >Good</b-button
+        >
+        <b-button
+          :variant="shelf.rating === 'OK' ? 'primary' : 'white'"
+          @click="rate('OK')"
+          >OK</b-button
+        >
+        <b-button
+          :variant="shelf.rating === 'Bad' ? 'primary' : 'white'"
+          @click="rate('Bad')"
+          >Bad</b-button
+        >
+      </b-button-group>
       <ul>
         <li v-for="book in books" :key="book.id">
           <strong>
@@ -99,6 +116,12 @@ function rotateLeft() {
 
 function rotateRight() {
   rotate(-90)
+}
+
+async function rate(val) {
+  const update = shelf.value
+  update.rating = val
+  await shelfStore.save(update)
 }
 
 onMounted(() => {
