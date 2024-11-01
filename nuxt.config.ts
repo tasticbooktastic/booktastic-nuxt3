@@ -590,7 +590,7 @@ export default defineNuxtConfig({
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: 'author', name: 'author', content: 'Freegle' },
+        { hid: 'author', name: 'author', content: 'Booktastic' },
         { name: 'supported-color-schemes', content: 'light' },
         { name: 'color-scheme', content: 'light' },
         {
@@ -620,7 +620,11 @@ export default defineNuxtConfig({
           property: 'og:title',
           content: 'Booktastic - lend and borrow books with people nearby!',
         },
-        { hid: 'og:site_name', property: 'og:site_name', content: 'Freegle' },
+        {
+          hid: 'og:site_name',
+          property: 'og:site_name',
+          content: 'Booktastic',
+        },
         {
           hid: 'og:url',
           property: 'og:url',
@@ -660,7 +664,7 @@ export default defineNuxtConfig({
         {
           hid: 'twitter:image:alt',
           name: 'twitter:image:alt',
-          content: 'The Freegle logo',
+          content: 'The Booktastic logo',
         },
         {
           hid: 'twitter:card',
