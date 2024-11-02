@@ -1,7 +1,7 @@
 <template>
   <div class="pl-2">
     <h1>Shelf {{ shelf?.id }}</h1>
-    <p class="small text-muted">
+    <p v-if="shelf?.created" class="small text-muted">
       Uploaded at {{ datetimeshort(shelf?.created) }}
     </p>
     <div v-if="processing">

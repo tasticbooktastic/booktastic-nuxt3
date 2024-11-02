@@ -22,7 +22,7 @@
         <client-only>
           <BreakpointFettler />
         </client-only>
-        <div class="w-100 d-flex justify-content-around">
+        <div class="w-100 d-flex justify-content-around mb-4">
           <ShelfUpload />
         </div>
       </div>
