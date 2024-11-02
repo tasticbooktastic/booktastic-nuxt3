@@ -11,6 +11,7 @@
         <p>Take a photo of a bookshelf and we'll try to identify the books.</p>
         <div class="font-weight-bold">
           <ul class="list-unstyled">
+            <li>Aim to fit about 10 books in each photo.</li>
             <li>A single shelf - not two or more in the same image.</li>
             <li>Straight on - not looking down, up or from one side.</li>
             <li>Good lighting - try with flash.</li>
