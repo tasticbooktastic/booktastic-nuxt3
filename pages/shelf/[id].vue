@@ -1,6 +1,9 @@
 <template>
   <div class="pl-2">
-    <h1>Shelf</h1>
+    <h1>Shelf {{ shelf?.id }}</h1>
+    <p class="small text-muted">
+      Uploaded at {{ datetimeshort(shelf?.created) }}
+    </p>
     <div v-if="processing">
       <p class="pulsate">Processing image...</p>
       <p>
@@ -29,10 +32,11 @@
       </b-button-group>
       <ul>
         <li v-for="book in books" :key="book.id">
+          <em>{{ authorsString(book.authors) }}</em
+          >&nbsp;
           <strong>
             {{ book.title }}
           </strong>
-          &nbsp;<em>{{ authorsString(book.authors) }}</em>
           <span class="small text-faded"> ISBN {{ book.isbn13 }} </span>
         </li>
       </ul>

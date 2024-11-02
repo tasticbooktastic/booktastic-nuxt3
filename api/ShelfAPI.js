@@ -5,7 +5,7 @@ export default class ShelfAPI extends BaseAPI {
     return this.$getv2('/shelf/' + id, {}, logError)
   }
 
-  list(id) {
+  list() {
     return this.$getv2('/shelf')
   }
 
