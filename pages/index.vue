@@ -22,7 +22,7 @@
         <client-only>
           <BreakpointFettler />
         </client-only>
-        <div class="w-100 d-flex justify-content-around mb-4">
+        <div class="w-100 d-flex justify-content-around botmarg">
           <ShelfUpload />
         </div>
       </div>
@@ -144,5 +144,9 @@ export default {
 
 main {
   margin-top: 0px;
+}
+
+.botmarg {
+  margin-bottom: 80px;
 }
 </style>
