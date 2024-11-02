@@ -8,10 +8,15 @@
         <p class="text--medium-responsive black font-weight-bold">
           This is a proof of concept.
         </p>
-        <p>
-          Take a photo of a bookshelf and we'll try to identify the books. Make
-          sure it's in focus and well-lit. Something like this:
-        </p>
+        <p>Take a photo of a bookshelf and we'll try to identify the books.</p>
+        <div class="font-weight-bold">
+          <ul class="list-unstyled">
+            <li>A single shelf - not two or more in the same image.</li>
+            <li>Straight on - not looking down, up or from one side.</li>
+            <li>Good lighting - try with flash.</li>
+          </ul>
+        </div>
+        <p>You're aiming for something like this:</p>
         <b-img src="/example.jpg" width="300" class="mb-2" />
         <client-only>
           <BreakpointFettler />
