@@ -39,7 +39,6 @@
         }}</b-badge>
       </template>
     </b-table>
-    {{ shelves }}
   </div>
 </template>
 <script setup>
