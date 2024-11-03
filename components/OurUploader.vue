@@ -31,6 +31,7 @@
           onRequestCloseModal: closeModal,
           waitForThumbnailsBeforeUpload: true,
           closeAfterFinish: true,
+          showNativePhotoCameraButton: true,
         }"
       />
     </div>
@@ -43,7 +44,6 @@ import { shouldPolyfill as shouldPolyfillPlural } from '@formatjs/intl-pluralrul
 import Uppy from '@uppy/core'
 import { DashboardModal } from '@uppy/vue'
 import Tus from '@uppy/tus'
-import Webcam from '@uppy/webcam'
 import Compressor from '@uppy/compressor'
 
 import ResizeObserver from 'resize-observer-polyfill'
@@ -174,6 +174,29 @@ watch(dashboard, (newVal, oldVal) => {
 })
 
 let uppyTimer = null
+let showGridTimer = null
+
+function addGrid() {
+  // Get first element with class uppy-Webcam-video
+  const video = document.querySelector('.uppy-Webcam-video')
+  console.log('Video', video)
+
+  if (!video) {
+    console.log('No video')
+    showGridTimer = setTimeout(addGrid, 500)
+  } else {
+    console.log('Initial', video.videoWidth, video.videoHeight)
+    video.addEventListener(
+      'loadedmetadata',
+      function (e) {
+        const width = video.videoWidth
+        const height = video.videoHeight
+        console.log('Got event height', width, height)
+      },
+      false
+    )
+  }
+}
 
 onMounted(() => {
   console.log(
@@ -183,6 +206,8 @@ onMounted(() => {
     props.multiple,
     props.startOpen
   )
+  addGrid()
+
   uppy = new Uppy({
     autoProceed: true,
     closeAfterFinish: true,
@@ -199,15 +224,6 @@ onMounted(() => {
       maxNumberOfFiles: props.multiple ? 10 : 1,
     },
   })
-    .use(Webcam, {
-      mirror: false,
-      modes: ['picture'],
-      mobileNativeCamera: true,
-      showVideoSourceDropdown: true,
-      videoConstraints: {
-        facingMode: 'environment',
-      },
-    })
     .use(Tus, {
       endpoint: runtimeConfig.public.TUS_UPLOADER,
       uploadDataDuringCreation: true,
@@ -302,6 +318,11 @@ onBeforeUnmount(() => {
     console.log('Uploader unmounted')
     clearTimeout(uppyTimer)
     uppyTimer = null
+  }
+
+  if (showGridTimer) {
+    clearTimeout(showGridTimer)
+    showGridTimer = null
   }
 })
 
