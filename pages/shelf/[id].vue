@@ -37,7 +37,9 @@
           <strong>
             {{ book.title }}
           </strong>
-          <span class="small text-faded"> ISBN {{ book.isbn13 }} </span>
+          <span v-if="book.isbn13" class="small text-faded">
+            ISBN {{ book.isbn13 }}
+          </span>
         </li>
       </ul>
       <div v-if="shelf">
@@ -55,7 +57,9 @@
           provider="weserv"
         />
         <div class="small">Image ID: {{ shelf.id }}</div>
-        <div class="small">Image UID: {{ shelf.externaluid }}</div>
+        <div class="small">
+          <ExternalLink :href="rawimage">Raw image</ExternalLink>
+        </div>
       </div>
       <p>
         You can force the photo to be rescanned. Only really for use when
@@ -79,6 +83,10 @@ const shelfStore = useShelfStore()
 const books = computed(() => shelfStore.booksById(id))
 const shelf = computed(() => shelfStore.byId(id))
 const mods = ref({})
+const rawimage = computed(() => {
+  const runtimeConfig = useRuntimeConfig()
+  return runtimeConfig.public.TUS_UPLOADER + '/' + shelf.value?.externaluid
+})
 
 async function checkProcessed() {
   await shelfStore.fetch(id, true)
